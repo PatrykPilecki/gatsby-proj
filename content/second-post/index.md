@@ -1,5 +1,5 @@
 ---
-title: My second Blog post
+title: Second
 date: '2018-12-02'
 tags: ['javascript','react']
 ---

@@ -4,18 +4,19 @@ import { Link, graphql } from 'gatsby'
 import '../style/style.scss';
 import Layout from '../components/layout'
 
+
 const Template1 = (props) => ( 
   <div className={`post-list ${props.templateName}`}>
     <h1>{props.node.frontmatter.title}</h1>
     <span>{props.node.frontmatter.date}</span>
-    <p>{props.node.excerpt}</p>
+   
   </div>
 )
 const Template2 = (props) => ( 
   <div className={`post-list ${props.templateName}`}>
     <h1>{props.node.frontmatter.title}</h1>
     <span>{props.node.frontmatter.date}</span>
-    <p>{props.node.excerpt}</p>
+   
   </div>
 )
 
@@ -33,15 +34,16 @@ const IndexPage = (props) => {
   const postList = props.data.allMarkdownRemark;
   return (
     <Layout>
-      <div class="b--blog">
+                    
+<div class="container">
       {postList.edges.map(({ node }, i) => {
         const templateName = (
           i === 0 && 'template-1') ||
           (i === 1 && 'template-2') ||
-          (i > 5 && 'template-3');
+          (i >-2 && i < 5  && 'template-3');
 
         return (
-          <Link to={node.fields.slug} key={i} className="link" >
+          <Link to={node.fields.slug} key={i} id="link-style" className={templateName} >
          
               <PostTemplate index={i} templateName={templateName} node={node} />
               
@@ -52,6 +54,8 @@ const IndexPage = (props) => {
     </Layout>
   )
 }
+
+
 
 export default IndexPage;
 
