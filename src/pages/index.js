@@ -48,8 +48,8 @@ const IndexPage = (props) => {
       {postList.edges.map(({ node }, i) => {
         const templateName = (
           i === 0 && 'template-1') ||
-          (i === 1 && 'template-2') ||
-          (i >= 2 && i < 6  && 'template-3');
+          (i >= 1&& i <5 && 'template-2') ||
+          (i >= 5 && 'template-3');
 
         return (
           <Link to={node.fields.slug} key={i} id="link-style" className={templateName} >
