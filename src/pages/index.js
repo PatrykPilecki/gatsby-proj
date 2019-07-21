@@ -76,6 +76,8 @@ const IndexPage = (props) => {
             </Link>
           )
         })}
+
+        <div class="template-10">Zobacz Wszystkie</div>
         </div>
       </div>
     </Layout>
